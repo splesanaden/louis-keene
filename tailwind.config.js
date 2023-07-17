@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 const colors = require("tailwindcss/colors");
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
@@ -17,6 +19,10 @@ module.exports = {
         blue: colors.blue,
         green: colors.green,
         zinc: colors.zinc,
+      },
+      screens: {
+        ...defaultTheme.screens,
+        "3xl": "1920px",
       },
     },
   },

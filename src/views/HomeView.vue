@@ -2,7 +2,7 @@
 
 <template>
   <main
-    class="xl:max-w-screen-xl 2xl:max-w-screen-2xl 3xl:max-w-screen-3xl | mx-auto p-8 xl:p-16"
+    class="xl:max-w-screen-2xl 2xl:max-w-screen-md 2xl:w-9/12 3xl:max-w-screen-3xl | mx-auto p-8 lg:p-8 2xl:p-16"
   >
     <div
       class="grid grid-cols-2 xl:grid-cols-3 xl:grid-rows-2 gap-2 xl:gap-8 grid-flow-row-dense"

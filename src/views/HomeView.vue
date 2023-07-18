@@ -1,8 +1,14 @@
-<script setup></script>
+<script setup>
+import { onMounted } from "vue";
+const emit = defineEmits(["homeLoaded"]);
+onMounted(() => {
+  emit("homeLoaded");
+});
+</script>
 
 <template>
   <main
-    class="xl:max-w-screen-2xl 2xl:max-w-screen-md 2xl:w-9/12 3xl:max-w-screen-3xl | mx-auto p-8 lg:p-8 2xl:p-16"
+    class="xl:max-w-screen-2xl 2xl:max-w-screen-2xl 2xl:w-9/12 3xl:max-w-screen-3xl | mx-auto p-8 lg:p-8 2xl:p-16"
   >
     <div
       class="grid grid-cols-2 xl:grid-cols-3 xl:grid-rows-2 gap-2 xl:gap-8 grid-flow-row-dense"

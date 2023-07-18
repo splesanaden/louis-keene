@@ -1,5 +1,15 @@
 <script setup>
 import { RouterLink } from "vue-router";
+import { onMounted } from "vue";
+const emit = defineEmits([
+  "footerLoaded",
+  "main-swiper--prev",
+  "main-swiper--next",
+]);
+
+onMounted(() => {
+  emit("footerLoaded");
+});
 </script>
 
 <template>
@@ -9,9 +19,10 @@ import { RouterLink } from "vue-router";
     <div
       class="footer-nav--wrapper | grid grid-cols-3 gap-4 grid-flow-row | w-full mx-auto"
     >
-      <div class="grid items-stretch justify-center xl:justify-start">
+      <div class="grid items-stretch justify-start">
         <button
           class="footer-btn footer-btn--prev | p-4 transition-all duration-75 hover:bg-zinc-950 hover:text-white active:bg-zinc-700 active:text-white"
+          @click="$emit('main-swiper--prev')"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -31,14 +42,15 @@ import { RouterLink } from "vue-router";
       </div>
       <div class="grid | items-stretch justify-center">
         <button
-          class="bg-zinc-950 text-white text-2xl | transition-all duration-75 hover:bg-zinc-800 | p-10"
+          class="bg-zinc-950 text-white text-lg xl:text-2xl | transition-all duration-75 hover:bg-zinc-800 | p-4 xl:p-10"
         >
           Book a Consultation
         </button>
       </div>
-      <div class="grid items-stretch justify-center xl:justify-end">
+      <div class="grid items-stretch justify-end">
         <button
           class="footer-btn footer-btn--next | p-4 | transition-all duration-75 hover:bg-zinc-950 hover:text-white active:bg-zinc-700 active:text-white"
+          @click="$emit('main-swiper--next')"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

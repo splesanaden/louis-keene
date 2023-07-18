@@ -19,6 +19,15 @@ const onSlideChange = (e) => {
   console.log("slide changed");
 };
 
+const mainSlideChange = (direction) => {
+  const swiper = document.getElementById("main-swiper").swiper;
+  if (direction === "next") {
+    swiper.slideNext();
+  } else {
+    swiper.slidePrev();
+  }
+};
+
 onMounted(() => {});
 </script>
 
@@ -45,6 +54,9 @@ onMounted(() => {});
         slidesPerView: 1,
       },
     }"
+    :observer="true"
+    :observeParents="true"
+    :parallax="true"
     @progress="onProgress"
     @slidechange="onSlideChange"
   >
@@ -59,7 +71,10 @@ onMounted(() => {});
     >
   </swiper-container>
 
-  <Footer />
+  <Footer
+    @main-swiper--prev="mainSlideChange('prev')"
+    @main-swiper--next="mainSlideChange('next')"
+  />
 </template>
 
 <style scoped></style>

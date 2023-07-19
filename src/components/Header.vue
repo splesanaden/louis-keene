@@ -3,18 +3,16 @@ import { RouterLink } from "vue-router";
 </script>
 
 <template>
-  <header
-    class="header-nav | border-b border-b-zinc-950 | sticky top-0 | bg-white"
-  >
+  <header class="header-nav | border-y border-y-zinc-950 | bg-white | w-full">
     <div
-      class="header-nav--wrapper | grid grid-cols-2 gap-4 grid-flow-row | xl:max-w-screen-xl 2xl:max-w-screen-2xl 3xl:max-w-screen-3xl mx-auto | ps-8 xl:px-16"
+      class="header-nav--wrapper | grid grid-cols-2 gap-4 grid-flow-row | w-screen h-full xl:max-w-screen-2xl 2xl:max-w-screen-2xl 3xl:max-w-screen-3xl | items-stretch | 2xl:mx-auto | ps-8 xl:px-0 3xl:px-16"
     >
       <div class="grid items-center">
         <img src="/images/Louis Keene Logo@2x.svg" alt="Louis Keene Logo" />
       </div>
 
-      <div class="xl:grid hidden items-center justify-end">
-        <nav class="flex items-center justify-stretch">
+      <div class="xl:grid hidden items-stretch justify-end">
+        <nav class="flex justify-stretch items-center">
           <router-link class="header-nav--link" to="/">Home</router-link>
           <router-link class="header-nav--link" to="/projects"
             >Projects</router-link
@@ -55,20 +53,33 @@ import { RouterLink } from "vue-router";
   font-size: 1.5rem;
   font-weight: 700;
   color: theme("colors.zinc.700");
+  background-color: transparent;
   text-align: center;
   min-width: 100px;
-  padding: 16px 20px;
-
+  height: 100%;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  border: 1px solid transparent;
   box-shadow: inset 0 -2px 0 0px transparent;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.2s linear, box-shadow 0.075s linear;
 
   &:hover {
     color: theme("colors.zinc.950");
+    border-color: transparent theme("colors.zinc.600");
     box-shadow: inset 0 -2px 0 0px theme("colors.zinc.600");
+    background-color: theme("colors.zinc.50");
   }
-  &:focus {
-    box-shadow: inset 0 -4px 0 0px theme("colors.zinc.950");
-    color: theme("colors.zinc.600");
+  &:focus,
+  &.router-link-active {
+    box-shadow: inset 0 -5px 0 0px theme("colors.zinc.950");
+    color: white;
+    background-color: theme("colors.zinc.950");
+  }
+  &:active {
+    box-shadow: inset 0 0px 0px 0px transparent;
+    color: white;
+    background-color: theme("colors.zinc.700");
   }
 }
 </style>

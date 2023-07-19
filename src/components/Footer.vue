@@ -13,15 +13,13 @@ onMounted(() => {
 </script>
 
 <template>
-  <header
-    class="footer-nav | border-t border-t-zinc-950 | fixed w-full bottom-0 | bg-white"
-  >
+  <footer class="footer-nav | border-t border-t-zinc-950 | w-screen | bg-white">
     <div
-      class="footer-nav--wrapper | grid grid-cols-3 gap-4 grid-flow-row | w-full mx-auto"
+      class="footer-nav--wrapper | grid grid-cols-3 gap-4 grid-flow-row | w-full h-full | mx-auto"
     >
       <div class="grid items-stretch justify-start">
         <button
-          class="footer-btn footer-btn--prev | p-4 transition-all duration-75 hover:bg-zinc-950 hover:text-white active:bg-zinc-700 active:text-white"
+          class="footer-btn footer-btn--prev | p-4 | border-zinc-950 border-x | transition-all duration-75 hover:bg-zinc-950 hover:text-white active:bg-zinc-700 active:text-white"
           @click="$emit('main-swiper--prev')"
         >
           <svg
@@ -30,7 +28,7 @@ onMounted(() => {
             viewBox="0 0 24 24"
             stroke-width="1"
             stroke="currentColor"
-            class="w-16 h-16"
+            class="w-8 h-8"
           >
             <path
               stroke-linecap="round"
@@ -42,14 +40,14 @@ onMounted(() => {
       </div>
       <div class="grid | items-stretch justify-center">
         <button
-          class="bg-zinc-950 text-white text-lg xl:text-2xl | transition-all duration-75 hover:bg-zinc-800 | p-4 xl:p-10"
+          class="bg-white text-zinc--950 text-lg xl:text-2xl font-bold | border-zinc-950 border-x | transition-all duration-75 hover:bg-zinc-950 hover:text-white | p-4 xl:p-4"
         >
           Book a Consultation
         </button>
       </div>
       <div class="grid items-stretch justify-end">
         <button
-          class="footer-btn footer-btn--next | p-4 | transition-all duration-75 hover:bg-zinc-950 hover:text-white active:bg-zinc-700 active:text-white"
+          class="footer-btn footer-btn--next | p-4 | border-zinc-950 border-x | transition-all duration-75 hover:bg-zinc-950 hover:text-white active:bg-zinc-700 active:text-white"
           @click="$emit('main-swiper--next')"
         >
           <svg
@@ -58,7 +56,7 @@ onMounted(() => {
             viewBox="0 0 24 24"
             stroke-width="1"
             stroke="currentColor"
-            class="w-16 h-16"
+            class="w-8 h-8"
           >
             <path
               stroke-linecap="round"
@@ -69,7 +67,7 @@ onMounted(() => {
         </button>
       </div>
     </div>
-  </header>
+  </footer>
 </template>
 
 <style scoped lang="scss"></style>

@@ -27,13 +27,14 @@ onMounted(async () => {
 
 <template>
   <article
-    class="xl:max-w-screen-xl 2xl:max-w-screen-2xl 3xl:max-w-screen-3xl | mx-auto p-8 lg:p-8 2xl:p-16"
+    class="xl:max-w-screen-xl 2xl:max-w-screen-2xl 3xl:max-w-screen-2xl | mx-auto p-8 lg:p-8 2xl:p-16"
   >
     <div
       class="portfolio | w-full | grid justify-stretch"
       v-if="!portfolioError"
     >
-      <nav class="portoflio-nav | grid grid-flow-col">
+      <h1 class="text-4xl font-bold text-center | mb-8">Get Inspired</h1>
+      <nav class="portoflio-nav | grid grid-flow-col | mb-8">
         <div
           class="portfolio-nav--link"
           :class="index == activePortfolioItem ? 'portfolio-active' : ''"
@@ -44,9 +45,10 @@ onMounted(async () => {
           {{ item.title.rendered }}
         </div>
       </nav>
-      <div class="portfolio-display | mt-4" v-if="getActivePortfolioItem">
+
+      <div class="portfolio-display | mt-6" v-if="getActivePortfolioItem">
         <div
-          class="portfolio-grid | grid grid-cols-8 grid-rows-2 grid-flow-col gap-6 | h-[420px] | items-stretch"
+          class="portfolio-grid | grid grid-cols-10 grid-rows-2 grid-flow-col gap-8 | h-[420px] | items-stretch"
         >
           <div class="portfolio-grid--col | col-span-3 row-span-2">
             <img
@@ -55,7 +57,7 @@ onMounted(async () => {
               class="portfolio-grid--img | w-auto h-full"
             />
           </div>
-          <div class="portfolio-grid--col | col-span-1 row-span-2">
+          <div class="portfolio-grid--col | col-span-2 row-span-2">
             <img
               :src="getActivePortfolioItem.meta.gallery[1].url"
               :alt="getActivePortfolioItem.title.rendered + ' image 2'"
@@ -63,13 +65,13 @@ onMounted(async () => {
             />
           </div>
           <div
-            class="portfolio-grid--col description-col | col-span-2 row-span-2 | flex flex-col | p-8"
+            class="portfolio-grid--col description-col | col-span-3 row-span-2 | flex flex-col | p-8"
           >
             <h2 class="text-3xl font-bold">
               {{ getActivePortfolioItem.title.rendered }}
             </h2>
             <div
-              class="text-xl | mt-4"
+              class="portfolio-excerpt | text-xl | mt-4"
               v-html="getActivePortfolioItem.excerpt.rendered"
             ></div>
             <router-link
@@ -79,18 +81,18 @@ onMounted(async () => {
               View Project
             </router-link>
           </div>
-          <div class="portfolio-grid--col | col-span-3 row-span-1">
+          <div class="portfolio-grid--col | col-span-2 row-span-1">
             <img
               :src="getActivePortfolioItem.meta.gallery[2].url"
               :alt="getActivePortfolioItem.title.rendered + ' image 3'"
-              class="portfolio-grid--img | w-auto h-full"
+              class="portfolio-grid--img | w-full h-full"
             />
           </div>
-          <div class="portfolio-grid--col | col-span-3 row-span-1">
+          <div class="portfolio-grid--col | col-span-2 row-span-1">
             <img
               :src="getActivePortfolioItem.meta.gallery[3].url"
               :alt="getActivePortfolioItem.title.rendered + ' image 4'"
-              class="portfolio-grid--img | w-auto h-full"
+              class="portfolio-grid--img | w-full h-full"
             />
           </div>
         </div>
@@ -99,7 +101,7 @@ onMounted(async () => {
   </article>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 .portfolio-nav--link {
   font-size: 1.5rem;
   font-weight: 700;
@@ -137,7 +139,7 @@ onMounted(async () => {
   object-fit: cover;
   object-position: top;
 }
-.description-col p {
+.portfolio-excerpt p {
   margin-bottom: 1.5rem;
 }
 </style>

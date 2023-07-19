@@ -1,5 +1,7 @@
 <script setup>
 import { RouterLink } from "vue-router";
+import { defineAsyncComponent } from "vue";
+import Logo from "@/components/Logo.vue";
 </script>
 
 <template>
@@ -8,7 +10,7 @@ import { RouterLink } from "vue-router";
       class="header-nav--wrapper | grid grid-cols-2 gap-4 grid-flow-row | w-screen h-full xl:max-w-screen-2xl 2xl:max-w-screen-2xl 3xl:max-w-screen-3xl | items-stretch | 2xl:mx-auto | ps-8 xl:pe-0 3xl:px-16"
     >
       <div class="grid items-center">
-        <img src="./images/Louis Keene Logo@2x.svg" alt="Louis Keene Logo" />
+        <Logo alt="Louis Keene Logo" />
       </div>
 
       <div class="xl:grid hidden items-stretch justify-end">

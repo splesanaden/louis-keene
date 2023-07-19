@@ -5,10 +5,10 @@ import { RouterLink } from "vue-router";
 <template>
   <header class="header-nav | border-y border-y-zinc-950 | bg-white | w-full">
     <div
-      class="header-nav--wrapper | grid grid-cols-2 gap-4 grid-flow-row | w-screen h-full xl:max-w-screen-2xl 2xl:max-w-screen-2xl 3xl:max-w-screen-3xl | items-stretch | 2xl:mx-auto | ps-8 xl:px-0 3xl:px-16"
+      class="header-nav--wrapper | grid grid-cols-2 gap-4 grid-flow-row | w-screen h-full xl:max-w-screen-2xl 2xl:max-w-screen-2xl 3xl:max-w-screen-3xl | items-stretch | 2xl:mx-auto | ps-8 xl:pe-0 3xl:px-16"
     >
       <div class="grid items-center">
-        <img src="/images/Louis Keene Logo@2x.svg" alt="Louis Keene Logo" />
+        <img src="images/Louis Keene Logo@2x.svg" alt="Louis Keene Logo" />
       </div>
 
       <div class="xl:grid hidden items-stretch justify-end">
@@ -60,14 +60,14 @@ import { RouterLink } from "vue-router";
   padding: 0 20px;
   display: flex;
   align-items: center;
-  border: 1px solid transparent;
+  justify-content: center;
+  border: 0px solid transparent;
   box-shadow: inset 0 -2px 0 0px transparent;
   transition: all 0.2s linear, box-shadow 0.075s linear;
 
   &:hover {
     color: theme("colors.zinc.950");
-    border-color: transparent theme("colors.zinc.600");
-    box-shadow: inset 0 -2px 0 0px theme("colors.zinc.600");
+    box-shadow: inset 0 -3px 0 0px theme("colors.zinc.600");
     background-color: theme("colors.zinc.50");
   }
   &:focus,
